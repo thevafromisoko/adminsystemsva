@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paschal Atehe — The VA From Isoko | Admin + Systems VA</title>
+<meta name="description" content="Admin + Systems Virtual Assistant for founders who are done running their business from their brain. Inbox, Calendar, CRM, Notion, SOPs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<section class="profile-collage" aria-label="Portfolio Introduction">
+    <div class="grid">
+        <div class="card card--brand">
+            <img src="paicon.png" alt="PA Monogram Logo — Paschal Atehe" loading="eager">
+        </div>
+
+        <div class="card card--suit">
+            <img src="suit.png" alt="Paschal Atehe in business attire" loading="lazy">
+        </div>
+
+        <div class="card card--bw">
+            <img src="blackwhite.png" alt="Paschal Atehe black and white portrait" loading="lazy">
+        </div>
+
+        <div class="card card--jacket">
+            <img src="jacket.png" alt="Paschal Atehe casual professional" loading="lazy">
+        </div>
+    </div>
+
+    <a href="#about" class="center-card" aria-label="Learn more about Paschal Atehe — The VA From Isoko">
+        <img src="lounge.png" alt="Paschal Atehe — The VA From Isoko" loading="eager">
+    </a>
+
+    <p class="website">THE VA FROM ISOKO</p>
+</section>
+
+<section class="intro" id="about">
+    <h1>Paschal Atehe</h1>
+    <p class="intro-subtitle">The VA From Isoko</p>
+    <p class="intro-tagline">Admin + Systems Virtual Assistant for founders who are done running their business from their brain.</p>
+    <button class="cta" id="openConcierge" type="button">Enter Site</button>
+</section>
+
+<div class="concierge-modal" id="conciergeModal" aria-hidden="true">
+  <div class="concierge-panel" role="dialog" aria-modal="true" aria-labelledby="conciergeTitle">
+    <button class="concierge-close" id="closeConcierge" type="button" aria-label="Close">&times;</button>
+
+    <p class="concierge-eyebrow">CURRENTLY TAKING ON CLIENTS</p>
+    <h2 id="conciergeTitle">The full website experience is coming soon.</h2>
+    <p class="concierge-text">
+      I manage your inbox, calendar, CRM, docs, and Notion — and build
+      simple systems so you can focus on work that actually moves
+      the business forward.<br><br>
+      Grab my free founder systems guide or send me a direct enquiry below.
+    </p>
+
+    <div class="concierge-actions">
+      <a
+        class="concierge-primary"
+        href="https://www.notion.so/Free-Resource-5-Systems-I-Use-With-Startup-Founders-To-Keep-Their-Ops-Tidy-31a8896be7138091a70ef5c722131c3d?source=copy_link"
+        target="_blank"
+        rel="noopener"
+      >
+        Free Guide — 5 Systems I Use With Founders
+      </a>
+
+      <a
+        class="concierge-secondary"
+        href="mailto:thevafromisoko@gmail.com?subject=Working%20Together%20—%20Admin%20%2B%20Systems%20VA"
+      >
+        Send an Enquiry
+      </a>
+    </div>
+
+    <p class="concierge-note">Clean backends. Sharp follow-through. Structure that scales.</p>
+  </div>
+</div>
+
+<script>
+  const openConcierge = document.getElementById("openConcierge");
+  const conciergeModal = document.getElementById("conciergeModal");
+  const closeConcierge = document.getElementById("closeConcierge");
+
+  function showConcierge() {
+    conciergeModal.classList.add("show");
+    conciergeModal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function hideConcierge() {
+    conciergeModal.classList.remove("show");
+    conciergeModal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  openConcierge.addEventListener("click", showConcierge);
+  closeConcierge.addEventListener("click", hideConcierge);
+
+  conciergeModal.addEventListener("click", function (e) {
+    if (e.target === conciergeModal) hideConcierge();
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && conciergeModal.classList.contains("show")) {
+      hideConcierge();
+    }
+  });
+</script>
+
+</body>
+</html>
