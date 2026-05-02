@@ -59,7 +59,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform .4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow .4s ease;
+  transition: transform .4s cubic-bezier(0.165, 0.84, 0.44, 1),
+              box-shadow .4s ease;
 }
 
 .card:hover {
@@ -74,7 +75,6 @@ body {
   transition: transform .5s ease;
 }
 
-/* 1. Brand Block (Top Left) */
 .card--brand {
   background: var(--navy);
   flex-direction: column;
@@ -108,7 +108,7 @@ body {
   transform: translate(-50%, -50%);
   width: min(320px, 40%);
   height: auto;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
   border-radius: var(--radius);
   overflow: hidden;
   border: 12px solid var(--bg);
@@ -150,7 +150,7 @@ body {
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .intro h1 {
@@ -189,30 +189,30 @@ body {
 }
 
 .intro-context {
-    max-width: 600px;
-    margin: 0 auto 28px;
-    text-align: center;
+  max-width: 600px;
+  margin: 0 auto 28px;
+  text-align: center;
 }
 
 .intro-problem {
-    font-family: 'DM Sans', Arial, Helvetica, sans-serif;
-    font-weight: 400;
-    font-size: 17px;
-    color: var(--charcoal);
-    line-height: 1.7;
-    margin-bottom: 14px;
-    opacity: 0.85;
+  font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  color: var(--charcoal);
+  line-height: 1.7;
+  margin-bottom: 14px;
+  opacity: 0.85;
 }
 
 .intro-solution {
-    font-family: 'DM Sans', Arial, Helvetica, sans-serif;
-    font-weight: 500;
-    font-size: 17px;
-    color: var(--navy);
-    line-height: 1.7;
+  font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  color: var(--navy);
+  line-height: 1.7;
 }
 
-/* CTA BUTTON */
+/* --- CTA BUTTON --- */
 .cta {
   display: inline-block;
   padding: 14px 32px;
@@ -230,18 +230,18 @@ body {
   -webkit-appearance: none;
 }
 
+.cta:hover {
+  background: #0d2d56;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
 .cta:focus-visible,
 .concierge-primary:focus-visible,
 .concierge-secondary:focus-visible,
 .concierge-close:focus-visible {
   outline: 2px solid var(--gold);
   outline-offset: 3px;
-}
-
-.cta:hover {
-  background: #0d2d56;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 /* --- CONCIERGE MODAL --- */
@@ -374,6 +374,7 @@ body {
   color: rgba(255, 255, 255, 0.55);
 }
 
+/* ✅ Single clean definition — no duplicate below */
 .concierge-email {
   color: var(--gold);
   text-decoration: none;
@@ -382,6 +383,7 @@ body {
 }
 
 .concierge-email:hover {
+  color: #fff;
   text-decoration: underline;
 }
 
@@ -394,40 +396,57 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* --- RESPONSIVE --- */
+/* --- RESPONSIVE: TABLET & MOBILE --- */
 @media (max-width: 768px) {
-  body { padding: 40px 15px; }
+  body {
+    padding: 40px 15px;
+  }
 
-  .profile-collage { margin-bottom: 80px; 
-                   overflow: visible;
-                    padding: 0 0 20px;
-                   }
+  .profile-collage {
+    margin-bottom: 80px;
+    overflow: visible;
+    padding: 0 0 20px;
+  }
 
-  .grid { gap: 12px; }
+  .grid {
+    gap: 12px;
+  }
 
-  .card { height: 180px; border-radius: 18px; }
+  .card {
+    height: 180px;
+    border-radius: 18px;
+  }
 
+  /* ✅ Fixed — height: auto so aspect-ratio works correctly */
   .center-card {
-    width: 170px;
-    height: 170px;
+    width: min(170px, 38%);
+    height: auto;
     border: 6px solid var(--bg);
     border-radius: 16px;
   }
 
-  .intro { width: 100%;
-          padding: 0 5px;
-         }
-            
-  .intro h1 { font-size: 26px; 
-             line-height: 1.2;
-            }
+  .intro {
+    width: 100%;
+    padding: 0 5px;
+  }
 
-  .intro-subtitle { font-size: 16px; }
+  .intro h1 {
+    font-size: 26px;
+    line-height: 1.2;
+  }
 
-  .intro-tagline { font-size: 15px; }
+  .intro-subtitle {
+    font-size: 16px;
+  }
+
+  .intro-tagline {
+    font-size: 15px;
+  }
 
   .intro-problem,
-  .intro-solution { font-size: 15px; }
+  .intro-solution {
+    font-size: 15px;
+  }
 
   .card--bw img {
     object-position: 18% center;
@@ -456,14 +475,20 @@ body {
   }
 }
 
-.concierge-email {
-  color: rgba(255, 255, 255, 0.45);
-  text-decoration: none;
-  font-style: normal;
-  transition: color 0.2s ease;
-}
+/* --- RESPONSIVE: EXTRA SMALL PHONES --- */
+@media (max-width: 400px) {
+  .card {
+    height: 150px;
+    border-radius: 16px;
+  }
 
-.concierge-email:hover {
-  color: var(--gold);
-  text-decoration: underline;
+  .center-card {
+    width: min(140px, 38%);
+    height: auto;
+    border-width: 5px;
+  }
+
+  .intro h1 {
+    font-size: 22px;
+  }
 }
