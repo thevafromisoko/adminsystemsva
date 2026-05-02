@@ -175,6 +175,41 @@ body {
   line-height: 1.6;
 }
 
+.intro-tagline::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--gold);
+  margin: 24px auto 0;
+  opacity: 0.6;
+}
+
+css
+.intro-context {
+    max-width: 600px;
+    margin: 0 auto 28px;
+    text-align: center;
+}
+
+.intro-problem {
+    font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    color: var(--charcoal);
+    line-height: 1.7;
+    margin-bottom: 14px;
+    opacity: 0.85;
+}
+
+.intro-solution {
+    font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    color: var(--navy);
+    line-height: 1.7;
+}
+
 /* CTA BUTTON */
 .cta {
   display: inline-block;
@@ -328,6 +363,33 @@ body {
 
 .concierge-close:hover {
   color: #fff;
+}
+
+.concierge-email-line {
+  margin-top: 14px;
+  font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.concierge-email {
+  color: var(--gold);
+  text-decoration: none;
+  font-style: normal;
+  transition: color 0.2s ease;
+}
+
+.concierge-email:hover {
+  text-decoration: underline;
+}
+
+.concierge-tagline {
+  margin-top: 16px;
+  font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.5px;
 }
 
 /* --- RESPONSIVE --- */
